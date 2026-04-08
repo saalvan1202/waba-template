@@ -12,6 +12,6 @@ app=FastAPI(
 
 @app.get("/")
 def read_root():
-    return {"Hello":"World"}
+    return {"message":"Usa solo el endpoint /api/v1/template-public/security-code para enviar el codigo de verificacion por whatsapp"}
 
 app.include_router(template_public_router.router)
