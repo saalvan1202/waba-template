@@ -13,7 +13,7 @@ router = APIRouter(prefix="/api/v1/template-public", tags=["TEMPLATES PUBLIC"])
 def security_code(data:SecurityCodeRequest):
     if data.pssw != "72580644-a24c-4862-8a06-29d9c1925617":
         return JSONResponse(content={"error": "Invalid password"}, status_code=400)
-    if data.telefono != "51965938082" or data.telefono != "51901981127":
+    if data.telefono != "51965938082" and data.telefono != "51901981127":
         return JSONResponse(content={"error": "Número de teléfono no permitido"}, status_code=400)
     telefono_str=str(data.telefono)
     version=os.getenv("VERSION_WPP_API")
